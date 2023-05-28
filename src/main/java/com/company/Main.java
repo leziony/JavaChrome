@@ -3,6 +3,8 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-    System.out.println("Complete!");
+        int i = 0;
+        i++;
+        System.out.print("Yay!");
     }
 }
