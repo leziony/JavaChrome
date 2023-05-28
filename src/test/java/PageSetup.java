@@ -13,7 +13,7 @@ public class PageSetup {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://ultimateqa.com/automation/");
-        Thread.sleep(2000);
+        Thread.sleep(1500);
     }
 
     @AfterEach
