@@ -13,7 +13,7 @@ public class PageSetup {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
-        Thread.sleep(500);
+        Thread.sleep(450);
     }
 
     @AfterEach
