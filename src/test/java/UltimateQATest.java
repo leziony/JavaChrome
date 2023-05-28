@@ -3,6 +3,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Sleeper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UltimateQATest extends PageSetup{
 
     @Test
@@ -35,6 +38,25 @@ public class UltimateQATest extends PageSetup{
     public void colorCheck(){
         WebElement testcolor = driver.findElementByXPath("/html/body/div[1]/div/div/div/article/div/div[1]/div/div[3]/div/div[1]/div[2]");
         Assertions.assertEquals("rgba(46, 163, 242, 1)",testcolor.getCssValue("background-color"));
+
+    }
+    @Test
+    public void dropdownCheck() throws InterruptedException {
+        List<String> cars= new ArrayList<>();
+        cars.add("volvo");
+        cars.add("saab");
+        cars.add("opel");
+        cars.add("audi");
+        WebElement dropdown;
+        for (String i:cars
+             ) {
+            Thread.sleep(600);
+            dropdown = driver.findElementByXPath("//*[@value='" + i.toLowerCase() +"']");
+            dropdown.click();
+            Assertions.assertTrue(dropdown.isSelected());
+
+        }
+
 
     }
 }
