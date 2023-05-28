@@ -5,7 +5,6 @@ import org.openqa.selenium.support.ui.Sleeper;
 
 public class UltimateQATest extends PageSetup{
 
-    //tester
     @Test
     public void testButton() throws InterruptedException {
         WebElement tester = driver.findElementById("idExample");
@@ -32,4 +31,10 @@ public class UltimateQATest extends PageSetup{
 
     }
 
+    @Test
+    public void colorCheck(){
+        WebElement testcolor = driver.findElementByXPath("/html/body/div[1]/div/div/div/article/div/div[1]/div/div[3]/div/div[1]/div[2]");
+        Assertions.assertEquals("rgba(46, 163, 242, 1)",testcolor.getCssValue("background-color"));
+
+    }
 }
